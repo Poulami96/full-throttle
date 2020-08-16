@@ -15,7 +15,6 @@ class UserListAPIView(generics.ListAPIView):
     def list(self, request):
         queryset = self.get_queryset()
         serializer = UserSerializer(queryset, many=True)
-        print(serializer.data)
         data={"ok":"true",
               "members":serializer.data}
         return Response(data)

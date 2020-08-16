@@ -16,9 +16,4 @@ class UserListView(ListView):
     
     def get_queryset(self,*args,**kwargs):
         qs = User.objects.all()
-        data = {
-            "ok":"true",
-            "members":qs
-        }
-        print(data)
-        return data
+        return qs
