@@ -21,5 +21,5 @@ from appbook.views import UserListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^api/user/',include(('appbook.api.urls','app_name'),namespace ='user-api')),
+    url(r'^',include(('appbook.api.urls','app_name'),namespace ='user-api')),
 ]
