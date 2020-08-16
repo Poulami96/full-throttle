@@ -11,7 +11,7 @@ class User(models.Model):
     
 
 class ActivityPeriod(models.Model):
-    user_pk = models.ForeignKey(User, related_name='tracks', on_delete=models.CASCADE)
+    user_pk = models.ForeignKey(User, related_name='activity_periods', on_delete=models.CASCADE)
     start_time = models.CharField(max_length=50)
     end_time = models.CharField(max_length=50)
     

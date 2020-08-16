@@ -1,5 +1,4 @@
 from rest_framework import status
-from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -13,3 +12,11 @@ class UserListAPIView(generics.ListAPIView):
     
     def get_queryset(self):
         return User.objects.all()
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer = UserSerializer(queryset, many=True)
+        print(serializer.data)
+        data={"ok":"true",
+              "members":serializer.data}
+        return Response(data)
+    
